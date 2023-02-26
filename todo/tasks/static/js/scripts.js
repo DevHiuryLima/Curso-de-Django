@@ -18,4 +18,14 @@ $( document ).ready(function() {
         }
 
     });
+
+    $(searchBtn).on('click', function() {
+        searchForm.submit();
+    });
+
+    $(filter).change(function() {
+        var filter = $(this).val();
+        window.location.href = baseUrl + '?filter=' + filter;
+    });
+
 });

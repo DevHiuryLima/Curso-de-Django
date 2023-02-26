@@ -11,8 +11,10 @@
             </div>
         </a>
         <div class="col-9 search-div">
-            <input type="text" name="search" id="search" class="form-control" placeholder="Digite o nome da tarefa para buscar">
-            <i class="fas fa-search"></i>
+            <form method="GET" id="search-form">
+                <input type="text" name="search" id="search" class="form-control" placeholder="Digite o nome da tarefa para buscar" value="{{ request.GET.search }}">
+                <i class="fas fa-search" id="search-btn"></i>
+            </form>
         </div>
 
         {% if messages %}
@@ -37,9 +39,11 @@
                     <a href="?page={{ tasks.previous_page_number }}"><i class="fas fa-arrow-left"></i></a>
                 {% endif %}
 
+                {% if tasks.paginator.num_pages %}
                 <span class="current">
                     {{ tasks.number }} de {{ tasks.paginator.num_pages }}
                 </span>
+                {% endif %}
 
                 {% if tasks.has_next %}
                     <a href="?page={{ tasks.next_page_number }}"><i class="fas fa-arrow-right"></i></a>
