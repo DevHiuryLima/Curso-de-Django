@@ -19,21 +19,34 @@
             <a class="navbar-brand" href="/">To Do</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Tarefas</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Usuários</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Sobre</a>
-                </li>
-              </ul>
+                <ul class="navbar-nav mr-auto">
+                    {% if user.is_auth %}
+                    <li class="nav-item">
+                      <a class="nav-link" href="/">Tarefas</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Usuários</a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                      <a class="nav-link" href="/accounts/login">Entrar</a>
+                    </li>
+                    {% endif %}
+
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Sobre</a>
+                    </li>
+
+                    {% if user.is_authenticated %}
+                    <li class="nav-item">
+                      <a class="nav-link" href="/accounts/logout">Sair</a>
+                    </li>
+                    {% endif %}
+                </ul>
             </div>
         </nav>
 
