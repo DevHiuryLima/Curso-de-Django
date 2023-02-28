@@ -119,7 +119,7 @@ Essas são as telas do sistema Web.
 
 &#xa0;
 
-3. Crie as migratios e execute-as:
+3. Crie as migrations e execute-as:
 
 ```
   $ python manage.py makemigrations
