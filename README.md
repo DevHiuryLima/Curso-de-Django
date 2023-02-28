@@ -141,7 +141,7 @@ Essas são as telas do sistema Web.
 
 5. Execute a aplicação 
 
- Pelo terminal entre na pasta 'todo' e execute o comando.
+ Pelo terminal entre na pasta `todo` e execute o comando.
 ```
   $ python manage.py runserver
 ```
